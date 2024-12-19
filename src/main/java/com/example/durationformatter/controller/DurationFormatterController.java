@@ -12,7 +12,12 @@ public class DurationFormatterController {
     private DurationFormatterService formatterService;
 
     @GetMapping("/{seconds}")
-    public String getFormattedDuration(@PathVariable long seconds) {
-        return formatterService.formatDuration(seconds);
+    public String getFormattedDuration(@PathVariable String seconds) {
+        try {
+            long parsedSeconds = Long.parseLong(seconds);
+            return formatterService.formatDuration(parsedSeconds);
+        } catch (NumberFormatException e) {
+            return "Invalid input: Please provide a valid number within the range of a long integer.";
+        }
     }
 }
