@@ -1,4 +1,4 @@
-package com.example.duration_formatter;
+package com.example.durationformatter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
