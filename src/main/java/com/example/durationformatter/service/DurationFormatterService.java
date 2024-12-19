@@ -9,18 +9,17 @@ import java.util.Map;
 @Service
 public class DurationFormatterService {
 
-    public String formatDuration(long seconds) {  // Change to long
+    public String formatDuration(long seconds) {
         if (seconds == 0) {
             return "now";
         }
 
-        // Define time units in a map
-        Map<String, Long> timeUnits = new LinkedHashMap<>();  // Change to Long
-        timeUnits.put("year", 365L * 24 * 60 * 60);  // Ensure long literals
-        timeUnits.put("day", 24L * 60 * 60);  // Ensure long literals
-        timeUnits.put("hour", 60L * 60);  // Ensure long literals
-        timeUnits.put("minute", 60L);  // Ensure long literals
-        timeUnits.put("second", 1L);  // Ensure long literals
+        Map<String, Long> timeUnits = new LinkedHashMap<>();
+        timeUnits.put("year", 365L * 24 * 60 * 60);
+        timeUnits.put("day", 24L * 60 * 60);
+        timeUnits.put("hour", 60L * 60);
+        timeUnits.put("minute", 60L);
+        timeUnits.put("second", 1L);
 
         // Calculate the time components
         List<String> components = new ArrayList<>();
