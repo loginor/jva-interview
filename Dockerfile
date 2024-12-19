@@ -1,14 +1,7 @@
-# Use an official Java runtime as a parent image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory in the container
+FROM maven:3.8.5-openjdk-17-slim
 WORKDIR /app
-
-# Copy the JAR file from your local machine to the container
-COPY target/duration-formatter-0.0.1-SNAPSHOT.jar /app/duration-formatter-0.0.1-SNAPSHOT.jar
-
-# Expose the port your Spring Boot application will run on
-EXPOSE 8080
-
-# Run the JAR file when the container starts
-ENTRYPOINT ["java", "-jar", "duration-formatter-0.0.1-SNAPSHOT.jar"]
+COPY ./pom.xml .
+RUN mvn dependency:go-offline
+COPY ./src ./src
+RUN mvn clean package
+CMD mvn test spring-boot:run
