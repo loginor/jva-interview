@@ -5,6 +5,7 @@
 https://spring-interview-backend.onrender.com/api/duration/61
 
 (Free host instance will spin down with inactivity, which can delay requests by 50 seconds or more the first time using after inactivity.)
+(Changes to the repo is auto deployed with render)
 
 This is a simple RESTful API built with Spring Boot that formats a given number of seconds into a human-readable duration, such as years, days, hours, minutes, and seconds.
 
