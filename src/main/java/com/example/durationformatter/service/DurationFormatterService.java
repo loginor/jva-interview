@@ -15,9 +15,9 @@ public class DurationFormatterService {
         }
 
         Map<String, Long> timeUnits = new LinkedHashMap<>();
-        timeUnits.put("year", 365L * 24 * 60 * 60);
-        timeUnits.put("day", 24L * 60 * 60);
-        timeUnits.put("hour", 60L * 60);
+        timeUnits.put("year", 365L * 24L * 60L * 60L);
+        timeUnits.put("day", 24L * 60L * 60L);
+        timeUnits.put("hour", 60L * 60L);
         timeUnits.put("minute", 60L);
         timeUnits.put("second", 1L);
 
